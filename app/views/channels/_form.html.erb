@@ -1,0 +1,15 @@
+<%= form_with model: @channel do |f| %>
+  <div class="columns">
+    <div class="column field">
+      <label class="label">Nome do canal</label>
+      <div class="control">
+        <%= f.text_field :title,
+                         class: "input is-medium",
+                         required: true,
+                         placeholder: "Trélu Treinamentos" %>
+      </div>
+    </div>
+  </div>
+
+  <%= f.submit "Salvar", class: "button is-info mt-5" %>
+<% end %>

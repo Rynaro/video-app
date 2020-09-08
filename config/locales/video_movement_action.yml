@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    video_movement_action:
+      view: 'View'
+      upvote: 'Upvote'
+      downvote: 'Downvote'

@@ -1,0 +1,12 @@
+<section class="hero is-dark mb-5">
+  <div class="hero-body">
+    <div class="container">
+      <div class="column" data-controller="videoplayer">
+        <video class="video-js is-fullwidth" id="player">
+          <source src="<%= video_url %>" type="<%= content_type %>" />
+        </video>
+        <%= hidden_field_tag :video_hash_id, video_hash_id, id: "hashId",  data: { target: "videoplayer.hashId" } %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+<%= form_with model: @video, url: channel_video_path(channel_id: @channel.id, id: @video.id), method: :put do |f| %>
+  <div class="columns">
+    <div class="column field">
+      <label class="label">Título do vídeo</label>
+      <div class="control">
+        <%= f.text_field :title,
+                         class: "input is-medium",
+                         required: true,
+                         placeholder: "Aula 01" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column field">
+      <label class="label">Estado do vídeo</label>
+      <div class="control">
+        <div class="select">
+          <%= f.select :status, VideoStatus.to_a, required: true, include_blank: "Escolha uma opção" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column is-half field">
+      <label class="label">Vídeo</label>
+      <%= render VideoPlayerComponent.new(video: @video) %>
+    </div>
+
+    <div class="column is-half field">
+      <label class="label">Thumbnail</label>
+      <figure class="image">
+        <img src="<%= rails_blob_path(@video.thumbnail) %>" alt="Image">
+      </figure>
+    </div>
+
+  </div>
+
+  <%= f.submit "Salvar", class: "button is-info mt-5" %>
+<% end %>

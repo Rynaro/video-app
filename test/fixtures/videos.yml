@@ -1,0 +1,6 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sculpture_video:
+  channel: my_channel
+  title: Building a sculpture with maple wood
+  status: active

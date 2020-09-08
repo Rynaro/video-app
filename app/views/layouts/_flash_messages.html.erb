@@ -1,0 +1,11 @@
+<div id="flash-messages-holder" class="flash-holder is-clearfix px-3 py-3" data-controller="flash-messages">
+  <%- Array(flash).each_with_index do |(name, msgs), outer_idx| %>
+    <%- next if name == 'timedout' %>
+    <%- Array(msgs).uniq.each_with_index do |msg, inner_idx| %>
+      <div class="notification is-radiusless is-<%= name %> <%= (outer_idx + inner_idx) > 0 ? 'mt-2' : 'mt-0' %> mb-0">
+        <button data-action="click->flash-messages#closeNotificationBox" class="delete"></button>
+        <%= msg %>
+      </div>
+    <%- end %>
+  <%- end %>
+</div>

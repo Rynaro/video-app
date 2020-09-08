@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    channel:
+      active: 'Ativo'
+      hidden: 'Invisível'
+      deactive: 'Desativado'

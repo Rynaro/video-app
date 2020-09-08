@@ -1,0 +1,2 @@
+module Discover::VideosHelper
+end

@@ -1,0 +1,15 @@
+<% if @video.video.attached? %>
+  <%= render VideoPlayerComponent.new(video: @video) %>
+<% end %>
+
+<div class="columns">
+  <div class="column is-half">
+    <h4 class="title is-4"><%= @video.title %></h4>
+  </div>
+
+  <div class="column is-half">
+    <%= render VideoStatsButtonComponent.new(type: :downvote, countage: 10) %>
+    <%= render VideoStatsButtonComponent.new(type: :upvote, countage: 10) %>
+    <%= render VideoStatsButtonComponent.new(type: :views, countage: @video.views) %>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="columns">
+  <div class="column is-two-thirds">
+    <% if @video.video.attached? %>
+      <%= render VideoPlayerComponent.new(video: @video) %>
+    <% end %>
+
+
+    <div class="columns">
+      <div class="column is-half">
+        <h4 class="title is-4"><%= @video.title %></h4>
+        <h5 class="subtitle is-5"><%= @video.channel.title %></h5>
+      </div>
+
+      <div class="column is-half">
+        <%= render VideoStatsButtonComponent.new(type: :downvote, countage: 10) %>
+        <%= render VideoStatsButtonComponent.new(type: :upvote, countage: 10) %>
+        <%= render VideoStatsButtonComponent.new(type: :views, countage: @video.views) %>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h5 class="title is-5 mb-3">Próximos:</h5>
+    <%= render VideoListComponent.new(videos: @related_videos) %>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<%= form_with model: @video, url: channel_videos_path(@channel) do |f| %>
+  <div class="columns">
+    <div class="column field">
+      <label class="label">Título do vídeo</label>
+      <div class="control">
+        <%= f.text_field :title,
+                         class: "input is-medium",
+                         required: true,
+                         placeholder: "Aula 01" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column field">
+      <label class="label">Estado do vídeo</label>
+      <div class="control">
+        <div class="select">
+          <%= f.select :status, VideoStatus.to_a, required: true, include_blank: "Escolha uma opção" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column is-half field">
+      <label class="label">Vídeo</label>
+      <div class="control">
+        <%= f.file_field :video, class: "input", required: true %>
+      </div>
+    </div>
+
+    <div class="column is-half field">
+      <label class="label">Thumbnail</label>
+      <div class="control">
+        <%= f.file_field :thumbnail, class: "input", required: true %>
+      </div>
+    </div>
+
+  </div>
+
+  <%= f.submit "Salvar", class: "button is-info mt-5" %>
+<% end %>
