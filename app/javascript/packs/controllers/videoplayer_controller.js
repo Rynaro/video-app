@@ -6,7 +6,7 @@ export default class extends Controller {
   static targets = [ "hashId" ]
 
   connect() {
-    if(this.player) { videojs(this.player).dispose(); }
+    document.getElementById("");
     this.player = videojs("player", {
       controls: true,
       autoplay: true,
@@ -18,7 +18,9 @@ export default class extends Controller {
   }
 
   countViewWhenPlay() {
-    this.player.on('play', () => { this.addView(); });
+    if(!window.location.pathname.includes('channels')) {
+      this.player.on('play', () => { this.addView(); });
+    }
   }
 
   addView() {
@@ -30,5 +32,9 @@ export default class extends Controller {
 
   get hashId() {
     return this.hashIdTarget;
+  }
+
+  disconnect() {
+    this.player.dispose();
   }
 }
