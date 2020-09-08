@@ -1,3 +1,5 @@
-<%- @videos.each do |video| %>
-  <%= render VideoListItemComponent.new(video: video) %>
-<% end %>
+<div class="columns is-multiline">
+  <% @videos.each do |video| %>
+    <%= render VideoListItemComponent.new(video: video) %>
+  <% end %>
+</div>

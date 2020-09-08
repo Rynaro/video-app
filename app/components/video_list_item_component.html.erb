@@ -1,4 +1,4 @@
-<%= link_to discover_video_path(video) do %>
+<%= link_to discover_video_path(video), class: "column is-full" do %>
   <div class="box">
     <article class="media">
       <div class="media-left">
@@ -13,6 +13,6 @@
           <p class="subtitle is-6"><i class="fas fa-eye mr-2"></i> <%= views %></p>
         </div>
       </div>
-    </div>
+    </article>
   </div>
 <% end %>

@@ -19,7 +19,7 @@ class ChannelsControllerTest < ActionDispatch::IntegrationTest
       post channels_url, params: { channel: { user_id: @channel.user_id, status: @channel.status, title: @channel.title } }
     end
 
-    assert_redirected_to channel_url(Channel.last)
+    assert_redirected_to my_channel_url
   end
 
   test "should show my channel after created one" do

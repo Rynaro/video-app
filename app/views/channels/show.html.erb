@@ -6,27 +6,6 @@
   </div>
 
   <div class="columns mb-5">
-    <div class="column is-one-third">
-      <div id="views" class="box py-5 has-text-centered">
-        <h2 class="title mt-5">1000</h2>
-        <h4 class="subtitle mb-5">Views</h4>
-      </div>
-    </div>
-    <div class="column is-one-third">
-      <div id="upvotes" class="box py-5 has-text-centered">
-        <h2 class="title mt-5">1000</h2>
-        <h4 class="subtitle mb-5">Upvotes</h4>
-      </div>
-    </div>
-    <div class="column is-one-third">
-      <div id="downvotes" class="box py-5 has-text-centered">
-        <h2 class="title mt-5">1000</h2>
-        <h4 class="subtitle mb-5">Downvotes</h4>
-      </div>
-    </div>
-  </div>
-
-  <div class="columns mb-5">
     <div class="column">
       <div class="buttons">
         <%= link_to "Inserir novo vídeo",
@@ -53,7 +32,7 @@
             <td>
               <%= link_to "Editar", edit_channel_video_path(@channel, video), class: "button is-small is-info" %>
               <%= link_to "Visualizar", channel_video_path(@channel, video), class: "button is-small is-info" %>
-              <%= link_to "Excluir", channel_video_path(@channel, video), class: "button is-small is-danger" %>
+              <%= link_to "Excluir", channel_video_path(@channel, video), method: :delete, class: "button is-small is-danger" %>
             </td>
           </tr>
         <% end %>
