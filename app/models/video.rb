@@ -9,7 +9,7 @@ class Video < ApplicationRecord
   attribute :status, :string, default: VideoStatus::ACTIVE
 
   belongs_to :channel
-  has_many :video_movements
+  has_many :video_movements, dependent: :delete_all
 
   has_one_attached :video
   has_one_attached :thumbnail
